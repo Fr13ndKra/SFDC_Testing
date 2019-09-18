@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" 
+                access= "global">
+    <!--jQuery style--> 
+    <ltng:require styles="{! $Resource.jQuery_UI + '/jquery-ui-1.12.1/jquery-ui.min.css'}" 
+                  scripts="{!join(',', 
+                           $Resource.jQuery224 ,   
+                           $Resource.jQuery_UI + '/jquery-ui-1.12.1/jquery-ui.min.js')
+                           }" afterScriptsLoaded="{!c.scriptsLoaded}"/>
+
+    <div class="modal-header slds-modal__header slds-size_1-of-1">
+        <h4 class="slds-text-heading--medium">Bloqueo de fechas</h4>
+        <lightning:helptext content="Solo sábados y domingos."/>
+    </div>
+    <br/>
+    <div class="modal-header slds-modal__header slds-size_1-of-1">
+        <input type="text" class="slds-input" id="datepickerId" />
+        <a href="https://developer.salesforce.com/forums/ForumsMain?id=9062I000000gBj1QAE#">More info</a>
+        <br/>
+        <br/>
+        <lightning:button variant="brand" onclick="{!c.getVal}" label="Get Date Value"/>
+       
+    </div>
+
+</aura:component>	
